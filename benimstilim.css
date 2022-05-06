@@ -1,0 +1,161 @@
+body {
+    background-color: #cecece;
+  font-family: "Lato", sans-serif;
+  padding: 1%;
+}
+
+.container {
+background-color: #ba879c;
+border-radius: 9px;
+margin-top: 2%;
+padding: 3%;
+}
+
+.container2 {
+  background-color: #c8d8e4;
+border-radius: 9px;
+margin-top: 2%;
+padding: 3%;
+}
+
+.img {
+  height: 350px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 2%;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 30%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 9px;
+}
+
+.right {
+  width: 70%;
+  height: 100%;
+}
+
+.cvpBaslik {
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 0%;
+}
+
+.cvpİcerik {
+margin-top: 0%;
+text-align: left;
+font-style: italic;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.altBaslik {
+  color:black;
+}
+
+#myLife {
+    color: #f1f1f1;
+}
+
+.myCity {
+  color: #f1f1f1;
+}
+
+#description {
+  margin-left: 1%;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font:bold;
+    font-style: italic;
+}
+
+#slider {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 9px;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(143, 154, 176);
+}
+
+#photo-description {
+  text-align: left;
+  font-size: large;
+  font-style: italic;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#kontrol {
+  text-decoration: none;
+}
+
+#myName {
+  margin: 1%;
+  font-size: xx-large;
+  font-weight: 900;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #116466;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #D1E8E2;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  background-color:rgb(98, 81, 81);
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
