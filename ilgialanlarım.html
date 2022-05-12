@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Muhammed Sefa Özdemir">
+    <meta name="keywords" content="Muhammed Sefa Özdemir,hakkımda">
+    <link rel="stylesheet" href="benimstilim.css">
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <title>İlgi Alanlarım</title>
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Hakkımda.html">Hakkımda</a>
+        <a href="ilgialanlarım.html">İlgi Alanlarım</a>
+        <a href="Akademik.html">Akademik</a>
+        <a href="sehrim57.html">Şehrim</a>
+        <a href="mirasımız.html">Mirasımız</a>
+        <a href="iletisim.html">İletişim</a>
+    </div>
+
+    <div id="main">
+        <h1 class="mainheader">
+            M. Sefa Özdemir
+        </h1>
+        <table>
+            <tr>
+                <ul class="ul">
+                    <li class="li"><span style="font-size:30px;cursor:pointer; color: white;"
+                            onclick="openNav()">&#9776; Menu</span></li>
+                    <li class="li"><a class="a" href="#sinema">Sinema</a></li>
+                    <li class="li"><a class="a" href="#edebiyat">Edebiyat</a></li>
+                    <li class="li"><a class="a" href="#muzik">Müzik</a></li>
+                </ul>
+            </tr>
+            <tr>
+
+                <div class="dis">
+                    <div class="ic">
+                        <h1>Hava Durumu</h1>
+                        <br>
+                        <input type="text" id="searchBar" placeholder="Şehir adı giriniz..">
+                    </div>
+                    <div class="ic">
+                        <div class="city">İstanbul, TR</div>
+                        <div class="temp">15°C</div>
+                        <div class="desc">Güneşli</div>
+                        <div class="minmax">14°C / 19°C</div>
+                    </div>
+                </div>
+                <script>
+                    const url = 'https://api.openweathermap.org/data/2.5/'
+                    const key = '44d0ff299a84c8ae59a1bb08270f1db0'
+
+                    const setQuery = (e) => {
+                        if (e.keyCode = '13')
+                            getResult(searchBar.value)
+                    }
+
+                    const getResult = (cityName) => {
+                        let query = `${url}weather?q=${cityName}&appid=${key}&units=metric&lang=tr`
+                        fetch(query)
+                            .then(weather => {
+                                return weather.json()
+                            })
+                            .then(displayResult)
+                    }
+
+                    const displayResult = (result) => {
+                        let city = document.querySelector('.city')
+                        city.innerText = `${result.name}, ${result.sys.country}`
+
+                        let temp = document.querySelector('.temp')
+                        temp.innerText = `${Math.round(result.main.temp)}°C`
+
+                        let desc = document.querySelector('.desc')
+                        desc.innerText = result.weather[0].description
+
+                        let minmax = document.querySelector('.minmax')
+                        minmax.innerText = `${Math.round(result.main.temp_min)}°C / ${Math.round(result.main.temp_max)}°C`
+                    }
+
+
+                    const searchBar = document.getElementById('searchBar')
+                    searchBar.addEventListener('keypress', setQuery)
+
+                </script>
+            </tr>
+        </table>
+
+        <div class="container">
+            <h1>İlgi alanlarım</h1>
+            <p style="font-size: large; font-weight: 550;">
+                Birçok kişinin de olduğu gibi benimde zamanımı gerçirmekten en çok keyif aldığım aktivite sevdiklerimle
+                bir arada olduğum anlar oluyor genelde.
+                Ama bu sayfada benim yapmaktan hoşlandığım aktivitelere göz atacağız. Dizi-film izlemekten, kitap
+                okumaktan, fiziksel olarak aktif olmaktan ve müzik dinlemek büyük keyif alırım.
+            </p>
+            <div style="padding: 2%;">
+                <article style="margin-top: 2%;">
+                    <h1 style="text-align: center; font-size:xx-large;" id="sinema">Sinema</h1>
+                    <p style="font-size:larger; font-weight: 550;">
+                        Öncelikle film izlemeyi özellikle korku-gerilim türünü izlemeyi çok sevdiğimi belirteyim. Eğer
+                        yeni bir diziye başlayacaksam ya da bir film arıyorsam genellikle önce bu türden aramaya
+                        başlarım. Korku-gerilim dediğimde aklınıza sadece paraormal filmler gelmesin -onlar da çok güzel
+                        fakat herkese göre değil- büyük çoğunluğu psikolojik anlamda da gerici olabiliyor.
+                        <br><br>
+                        Şimdi izleyip beğendiğim birkaç film ve diziden bahsedeceğim.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\shining.jpg" alt="The Shining" style="width: 300px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>The Shining</h3>
+                                <p style="font-size:larger ; font-weight: 600;">
+                                    Stanley Kubrick’in sinema tarihinde büyük ses getiren, Stephen King’in aynı isimli
+                                    romanından sinemaya uyarlanan efsanevi korku filmi The Shining, cinnet geçirme ve
+                                    delirme üzerinden hikâyesinin yapı taşlarını oluşturuyor. Başrollerinde Jack
+                                    Nicholson, Shelly Duvall, Danny Lloyd’un yer aldığı bu film, yazar Jack Torrance’ın,
+                                    kış sezonunda kapalı olan Overlook Oteli’nin bakımını üstlenerek, ailesiyle birlikte
+                                    otele taşınması sonrasında gelişen birtakım doğaüstü olayları konu alır. Jack’in
+                                    doğaüstü sezgilere sahip olan küçük oğlu Danny, bu otelde birtakım kötü ruhların
+                                    olduğunu hissetmeye başlar. Aile bir kar fırtınası sebebiyle dağda konuşlanan bu
+                                    otelde mahsur kaldığındaysa Jack doğaüstü varlıklar tarafından ele geçirilir ve
+                                    yavaş yavaş aklını kaybetmeye başlar.
+                                    <br>
+                                    Zaman içerisinde kült mertebesine erişen filmle ilgili birçok gizemli olay ve teori,
+                                    bugün bile hâlen konuşulmaya devam ediyor. Kendisinden sonra gelen birçok filme de
+                                    ilham kaynağı olan bu film, kamera önünde yaşananların yanında yapım sürecinde ve
+                                    ele aldığı kaynak materyale getirdiği yeni bir yorumla da adından söz ettiriyor.
+
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\psycho.jpg" alt="PSYCHO(1960)" style="width: 300px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>PSYCHO(1960)</h3>
+                                <p style="font-size:medium ; font-weight: 600;">
+                                    Marion (Janet Leigh) ve sevgilisi Sam (John Gavin), evlenmek istedikleri halde,
+                                    evlilik için yeterli paraları olmadığı için evlenemezler. Marion’un patronu banka
+                                    hesabına yatırması için 40 bin dolar verince, Marion parayı çalar ve Phoenix’i terk
+                                    eder. O geceyi yol üzerinde bir motelde geçirecektir. Marion ile arkadaş olan
+                                    motelin genç sahibi Norman Bates (Anthony Perkins), Victoria döneminden kalma büyük
+                                    bir konakta, hasta ve zor bir kadın olan annesiyle birlikte yaşadığını anlatır ve
+                                    Marion’u eve davet eder. Marion gece yatmadan önce duş alırken yaşlı kadın ansızın
+                                    ortaya çıkar ve duştaki Marion’u bıçaklayarak öldürür. Dakikalar sonra ortaya çıkan
+                                    Norman büyük bir soğukkanlılıkla yerdeki kan izlerini temizler ve Marion’un cesedini
+                                    kucağına alarak, kızın arabasının bagajına yerleştirir. Sonra da arabayı yakındaki
+                                    göle doğru sürerek gölün çamurlu sularının cinayet kanıtlarını yutmasını izler.
+                                    Kaybolan kızı izleyip, bulmayı üç kişi üstlenmiştir. Lila (Vera Miles), Sam ve
+                                    parayı bulmakla görevlendirilen sigorta müfettişi Arbogast (Martin Balsam)…
+                                    Arbogast’ın araştırmaları onu motele götürür. Orada Norman ile konuşur ama Norman’ın
+                                    onu annesiyle tanıştırmayı kabul etmemesi kuşkularını çoğaltır ve yaşlı kadınla
+                                    konuşmak için eve gizlice girer. Merdivenlerden ilk kata çıkar ama tam adımını
+                                    döşemeye attığı anda bıçaklanarak öldürülür ve cesedi merdivenlerden aşağı
+                                    yuvarlanır. O sırada Lila ve Sam, kasabanın şerifinden Norman Bates’in annesinin
+                                    öldüğünü ve sekiz yıl önce gömüldüğünü öğrenirler. Motele giderler. Lila evi aramaya
+                                    kalkışınca, ölümden zor kurtulur. Mücadele sonunda, Norman’ın çift kişilik taşıyan,
+                                    şizofrenik birisi olduğu ve ölmüş annesini temsil ederken de insan öldürmeye
+                                    eğilimli bir manyak olduğu açığa çıkar. Alfred Hitchcock'un başyapıtlarından biri
+                                    olarak kabul edilir.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\archive81.jpg" alt="Archive81" style="width: 300px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>Archive81</h3>
+                                <p style="font-size:larger ; font-weight: 600;">
+                                    LMG şirketinin zengin bağışçılarından biri olan Virgil, Dan Turner’ı video
+                                    kasetlerini düzenlemek üzere işe aldığında; kasetin arkasında yatan sırların ne
+                                    olduğunu belki tam olarak bilmiyor. Ya da istediği, tam olarak, kasetler yardımıyla
+                                    ortaya çıkacak olan şeytani kavramının kendisi oluyor. Virgil’in şüpheli tavırları
+                                    bir müddet zihin karmaşıklığı yaratsa da asıl ilgilenmemiz gereken meselenin Dan’in
+                                    işi olduğu anlaşıldığında; kasetler ufak ufak ipuçları vermeye başlıyor. 90’lı
+                                    yıllarda Visser apartmanında yaşayan film öğrencisi Melody Pendras, kayda aldığı
+                                    kasetler yardımıyla apartman içinde dolaşan, sükûn eden birtakım gizemli
+                                    varlıkların, paranoyaklaşan insanların olduğunu söylüyor. Dan işi gereği,
+                                    profesyonelce, kasetleri bir araya getirmeye çalışsa da; Melody’nin kayıt aldığı,
+                                    kaçınılmaz, doğa üstü gelişmeler, Dan’in dikkatini çekmeye başlıyor.
+                                    <br>
+                                    Geçmiş ile günümüz arasında mekik dokuyan Archive 81, ilk olarak Virgil’in şüpheci
+                                    ve tehditkâr benliği ile, devamında da Dan’in Melody ile tanışmasın ardından tam
+                                    şeklini girmiş oluyor. Spoilersız anlatımın gereği karşılaşacağınız görseller daha
+                                    çok hayal dünyasına ikame eden akışlar gibi gözükse de derinliklerde yatan pek çok
+                                    gizemli unsurun olduğu görülüyor. İnsanları çıldırtan bu kültürel inanç sistemi
+                                    Dan’in iliklerine kadar işlemeye başladığında da; soluksuz macera başlamış oluyor.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <article style="margin-top: 2%;">
+                    <h1 style="text-align: center; font-size: xx-large;" id="edebiyat">Edebiyat</h1>
+                    <p style="font-size:larger; font-weight: 550;">
+                        Birazda edebiyata bakalım çünkü okumayı da izlemek kadar severim çünkü izlerken evet hre şey
+                        güzel karakterler çevre mükemmel ama okumak hep ayrı oluyor. Çok klişe olacak ama önce hep
+                        kitabını okuyun denir bazı film-diziler için gerçekten doğru ve korku gerilim türü yapıtlarda
+                        daha da güzel oluyor çünkü yazarın seni germek istediği karakterler ve çevreyi kendi kafanda
+                        oluşturmaya çalıştırdığın için seni aynı konunun filmine göre daha çok etkiliyor ben de bunu
+                        seviyorum gerilim-gizem ya da korku türü kitaplarda. Bir de manga okumayı çok severim çizimler
+                        olaylar hep aksiyon dolu oluyor.
+                        <br>
+                        Şu anda roman yazarlarından Wulf Dorn'u oldukça beğeniyorum ama her zaman 1. sırada yerini
+                        tutacak olan gizem-polisiye yazarı Agatha Christie olacak. Onun yazımı ve ters köşeleri her
+                        zaman bir ayrı oluyor.
+                        <br><br>
+                        Şimdi okuyup beğendiğim birkaç kitap ve mangadan bahsedeceğim.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\330px-Cesetler_Merdiveni.jpg" alt="Cesetler Merdiveni"
+                                    style="width: 350px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>Cesetler Merdiveni</h3>
+                                <p style="font-size:90%; font-weight: 600;">
+                                    Klasik Agatha Christie romanlarından biri olan Cesetler Merdiveni yine oldukça
+                                    sürükleyici bir hikaye sunuyor. Christie kitaplarını okuyanlar bilirler, katilin kim
+                                    olduğunu kitap sonuna kadar sezmek çoğu zaman güç olur, tam buldum derken kafa
+                                    karıştırıcı bazı ayrıntılar ise yine yolunuzu şaşırabilirsiniz. Bu kitabında da
+                                    klasik Christie’yi yaşıyoruz diyebiliriz.
+                                    <br>
+                                    Klasik Agatha Christie romanlarından biri olan Cesetler Merdiveni yine oldukça
+                                    sürükleyici bir hikaye sunuyor. Christie kitaplarını okuyanlar bilirler, katilin kim
+                                    olduğunu kitap sonuna kadar sezmek çoğu zaman güç olur, tam buldum derken kafa
+                                    karıştırıcı bazı ayrıntılar ise yine yolunuzu şaşırabilirsiniz. Bu kitabında da
+                                    klasik Christie’yi yaşıyoruz diyebiliriz.
+                                    <br>
+                                    Kitapta hikayemiz oldukça sakin bir yerde yaşayan Bantry’lerin köşkünün
+                                    kütüphanesinde bulunan bir kadın cesedi ile başlıyor. Bantry’ler evin
+                                    çalışanlarından kütüphanede bir ceset olduğunu duyduklarında aslında başta
+                                    inanmıyorlar. Fakat sonrasında Bay Bantry kalkıp kütüphaneye indiğinde korkunç olay
+                                    ile karşı karşıya gelir. Sarışın ve garip giyimli bir kadın boylu boyunca
+                                    kütüphanede yatarken bulur. Bu sırada Bayan Bantry ise bu olayı çözmesi için yakın
+                                    arkadaşı olan Miss Marple’a haber verir ve onu çağırır. Böylelikle boğarak öldürülen
+                                    kadının katilini bulmak için çalışmalar başlar. Köşkte kimsenin bu kadını tanımaması
+                                    ile işleri karıştıran şeylerden biri olur aslında. Köşktekiler dahil olmak üzere
+                                    herkesin aklına şüpheleri çeken bir isim gelir. O da Basil Blake’dir. Jane Marple
+                                    tabi ki yine işin araştırmacı tarafında hikayemize dahil oluyor. Bu şüpheler üzerine
+                                    de araştırmalara başlıyor. Miss Marple’ı bilenler bu cinayetin de onun sayesinde
+                                    çözüleceğini çoktan anlamışlardır zaten.
+                                    <br>
+                                    Basil Blake’in üstüne farklı şüpheliler de ortaya çıkıyor ama bu sıra da Jane Marple
+                                    zaten katili bulduğuna inanıyor. Sadece daha fazla delile ihtiyacı olduğu için
+                                    araştırmalarına devam eder. Tüm bunlar olurken arabada ikinci bir ceset daha
+                                    bulunuyor. Bu iki ceset arasında bir bağlantı var mıydı, varsa bu bağlantı bizi
+                                    katile götürecek miydi? Gerçekten tüm bunları kitabın sonuna kadar kestirebilmek çok
+                                    mümkün olmadı. 
+                                    <br>
+                                    Tüm bu olay örgüsünü okurken karakterlerin birbirleri ile bağlantılarına, olay
+                                    akışlarına gerçekten yine hayran kaldığımı söyleyebilirim.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\fobi.jpg" alt="FOBİ" style="width: 350px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>FOBİ</h3>
+                                <p style="font-size: 90%; font-weight: 600;">
+                                    Tanımadığınız birinin hayatını düzeltmek için; 3 yılınızı heba edip, insanlara
+                                    işkence yapıp, tonlarca para sayar mıydınız? Ha bir de ölüm döşeğinde olduğunuzu
+                                    unutmayın.
+                                    Sarah’ın eşi Stephan zamanla ünlü bir mimar olmuş ve sürekli iş seyahatleri yüzünden
+                                    evinden uzak kalmaktadır. Sarah yine eşini işe seyahatinde sanırken ansızın evin
+                                    garaj yoluna kendi arabaları girer. Daha sonra eşinin her zamanki vurdumduymazlığı
+                                    ile anahtarlarının konsola bıraktığını işitir. Sarah eşinin yanına, mutfağa
+                                    gittiğinde ise üzerinde eşinin kıyafetlerini giymiş bir yabancı ile karşılaşır.
+                                    Sarah yabancıya kim olduğunu sorsa da yabancı tıpkı Stephan gibi davranmaktadır.
+                                    Sarah üst kattaki çocuğu Harven için oyuna uyar ve yabancıya kocası gibi davranır.
+                                    Eve üst kata çıkıp sürü sürü olanların yaşanmasının ardından polislere ulaşarak
+                                    başına gelenleri anlatır. Lakin polis, Sarah’a pekte inanmamaktadır.
+                                    Sarah için hayatının dönüm noktası olduğu gece bu gecedir. Eşine hiçbir şekilde
+                                    ulaşamamış ve o gece ki yabancıyı bir türlü aklından çıkaramamıştır. Polislerin
+                                    yanında olmayacağını anlayan Sarah olayı kendi kendine çözmeye koyulmuştur. Ama
+                                    nereden başlayacağını bilemez.
+                                    Ve işte burada karşımıza Wulf Dorn’un Psikiyatrist adlı kitabında ki ünlü psikiyatr
+                                    Mark Behrendt karşımıza çıkıyor. Sarah ile abi- kardeş ilişkisi olan bu ikili yolu
+                                    beraber bitirme hedefinde. Başlarda Mark, nişanlısı Tanja’yı kaybetmenin verdiği
+                                    depresyondan kurtulamayıp Sarah’ı reddetse de; bir yerden tekrardan başlamak zorunda
+                                    olduğunu hissedip Sarah’a yardım etmiştir.
+                                    Yabancı, ikiliyle telefondan iletişime geçmiş ve Sarah’a çözmesi gereken problemler
+                                    bırakmıştır. Sarah hepsini bir bir çözüp sonuça ulaştığında ise hem bambaşka biri
+                                    oluyor hem de edindiği acı tatlı her tecrübeyle başka bir hayatı yaşamaya başlıyor.
+                                    Öncelikle fobisini yeniyor. Muhteşem hayatı ve kariyerinin zedelenmesinden korkup;
+                                    Stephan’ı boşladığını, kendi benliğinden uzaklaştığını gösteriyor yabancı ona.
+                                    Çabalamanın ne olduğunu hatırlatıyor.
+                                    Kocasının 1 yıldan beri Katherine adlı bir kadınla olan ilişkisini öğreniyor mesela.
+                                    Ve işte yabancı bu yüzden işkence ediyor Stephan’e. Akıl almayacağınız türden
+                                    işkenceler.
+                                    Ayrıca Mark’ın nişanlısı Tanja’nın ölümü ile ilgili de küçük sırlar paylaşmış yazar.
+                                    Kitabın sonu Mark’a gelen bir not ile bitiyor çünkü. Belirsiz şahıs işinin
+                                    bitmediğini söylüyordu o notta.
+                                    Fobi kitabının 386 sayfasında Sarah’ın hikayesini anlatılıyor sanabilirsiniz ama
+                                    bence o yabancının hikayesi anlatılıyordu. Yabancının adı da John idi. Kitapta da
+                                    zaten John sempatik bir izlenim bıraktı bende. Çünkü onu görenler her ne kadar
+                                    John’a canavar diye hitap etse de John’un duygu ve düşüncelerine yer verildiği için
+                                    bakış açınız farklı olabiliyor.
+                                    Mesela Jay diye bir adam ölü bulunmuştu kendi evinde ama herkes John’u sorumlu
+                                    tutmuştu. Jay kendisi ölmek istiyordu ve John en yakın arkadaşına sadece yardım
+                                    etmişti. Ona acısız bir ölüm sunmuştu ve bu onu katil yapmıştı. Romanı hem katil hem
+                                    de kurbanın gözünden okuyucunca kafanız gerçekten çok fazla karışabilir.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="Gorseller\220px-Death_Note_kuralları.jpg" alt="Death Note"
+                                    style="width: 350px;">
+                            </td>
+                            <td style="background-color: blanchedalmond; border-radius: 5px; padding: 2%;">
+                                <h3>Death Note</h3>
+                                <p style="font-size: 100%; font-weight: 600;">
+                                    Yagami Light, zeki ve derslerinde gayet başarılı bir lise öğrencisidir. Light için
+                                    bu dünyada en önemli şey adalettir. Haberlere yansıyan cinayetlerden ve insanların
+                                    yozlaşmasından son derece bıkmıştır. Bir şinigami olan Ryuk, Şinigami Dünyasında hep
+                                    aynı şeyleri yapmaktan sıkılmıştır ve eğlenmek için sahip olduğu iki Ölüm Defteri'
+                                    nden birini dünyaya atar. Bu defteri Light bulur. Defteri açtığında ilk olarak
+                                    kuralları okur. "Bu deftere ismi yazılan kişi ölür." maddesini görünce bunu bir şaka
+                                    zanneder. Ama yine de defteri alır. Eve geldiğinde televizyondaki haberlerde bir
+                                    rehin tutma haberi yayınlanır. Şüphelinin ismi ve yüzü televizyonda açıklanır.
+                                    Light, tereddüte düşse de "böyle bir şeyin gerçekleşmesinin imkansız olduğu"
+                                    düşüncesine inandığı için şüphelinin ismini deftere yazar. 40 saniye sonra
+                                    televizyondan şüphelinin kalp krizi geçirip öldüğünü öğrenince defterin gerçek
+                                    olduğunu anlar. Light, bu defteri kullanarak dünyaya adaleti sağlamak ve Yeni
+                                    Dünyanın Tanrısı olmak ister. Suçluların sürekli kalp krizi geçirerek ölmesi,
+                                    insanlara bu ölümlerin tesadüf olmadığını hissettirmiştir. Halk tarafından Light' a
+                                    "Kira" (Jap: Katil) ismi verilir. Bazı insanlar Kira' yı adalet adına yaptıklarından
+                                    dolayı desteklerken, bazı insanlar ise bunun insanlık dışı olduğu gerekçesiyle Kira'
+                                    yı desteklemez. Light, insanların kendisini desteklememesine aldırmaz. Ona göre
+                                    ister iyi ister kötü olsun, karşısına çıkan herkesi yok edecektir.
+                                    <br>
+                                    Sonra, Interpol tarafından bu gizemli ölümler hakkında bir soruşturma başlatılır.
+                                    Soruşturmaya dedektif "L" de dahil edilir. "L", "Kira"nın Japon vatandaşı olduğunu
+                                    yaptığı bir test ile anlar. "L", Kira' ya yaptıklarının insanlık dışı olduğunu ve
+                                    bunun için idam edileceğini söyler. Böylelikle ikisi arasında bir savaş başlar.
+                                    Kimliği ilk deşifre olan kaybedecektir.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <article>
+                    <h1 style="text-align: center; font-size: xx-large;" id="muzik">Müzik</h1>
+                    <p style="font-size:larger; font-weight: 550;">
+                        Müzik dinlemek neredeyse herkes gibi benim de oldukça keyif aldığım bir şey. Müzik dinlerken
+                        daha çok sözlere değil besteye odaklanırım. Müziği dinlemeyi daha çok seviyorum.
+                        <br><br>
+                        Bu yüzden aşağıya çok sevdiğim klasik müziklerden oluşan bir spotify playlisti bırakıyorum.
+                    </p>
+                </article>
+
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/0VPiArRmmxO22hwNKtRYbv?utm_source=generator"
+                    width="100%" height="380" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+    </script>
+
+</body>
+
+</html>

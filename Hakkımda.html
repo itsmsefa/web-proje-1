@@ -6,18 +6,18 @@
         <meta name="keywords" content="Muhammed Sefa Özdemir,hakkımda">
         <link rel="stylesheet" href="benimstilim.css">
         <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
-        
+        <title>Hakkımda</title>
     </head>
     <body>
 
         <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Hakkımda.html">Hakkımda</a>
-        <a href="#">İlgi Alanlarım</a>
+        <a href="ilgialanlarım.html">İlgi Alanlarım</a>
         <a href="Akademik.html">Akademik</a>
         <a href="sehrim57.html">Şehrim</a>
-        <a href="#">Mirasımız</a>
-        <a href="#">İletişim</a>
+        <a href="mirasımız.html">Mirasımız</a>
+        <a href="iletisim.html">İletişim</a>
         </div>
 
         <div id="main">
@@ -74,43 +74,55 @@
                             </p>
                         </td>
                     </table>
+					
+					<p id="photo-description">Kısa biyografim hakkında birkaç fotoğraf: </p>
+					<div class="card" class="col-md-3">
+                                    <!-- Slideshow container -->
+                                    <div class="slideshow-container">
+                                        <!-- Full-width images with number and caption text -->
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\SinopFenLisesi.jpg" style="height: 450px;">
+                                        </div>
 
-                    <div id="slider">
-                                <p id="photo-description">Kısa biyografim hakkında birkaç fotoğraf: </p>
-                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                                    <div class="col-xl-8 col-lg-7">
-                                        <div class="slayt"><a href="" target="_blank"><img class="img" src="üni.jpg" alt=""></a></div>
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\üni.jpg" style="height: 450px;">
+                                        </div>
+
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\bebeksefa.jpg" style="height: 450px;">
+                                        </div>
+
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\simdisefa1.jpeg" style="height: 450px;">
+                                        </div>
+										
+										<div class="mySlides fade">
+                                            <img src="Gorseller\arkadaslar.jpeg" style="height: 450px;">
+                                        </div>
+
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\arkadaslar2.jpeg" style="height: 450px;">
+                                        </div>
+
+                                        <div class="mySlides fade">
+                                            <img src="Gorseller\arkadaslar3.jpeg" style="height: 450px;">
+                                        </div>
+
+                                        <!-- Next and previous buttons -->
+                                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                    </div>
+
+                                    <br>
+
+                                    <!-- The dots/circles -->
+                                    <div style="text-align:center">
+                                        <span class="dot" onclick="currentSlide(1)"></span>
+                                        <span class="dot" onclick="currentSlide(2)"></span>
+                                        <span class="dot" onclick="currentSlide(3)"></span>
                                     </div>
                                 </div>
-                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                                    <div class="col-xl-8 col-lg-7">
-                                        <div class="slayt"><a href="" target="_blank"><img class="img" src="SinopFenLisesi.jpg" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                                    <div class="col-xl-8 col-lg-7">
-                                        <div class="slayt"><a href="" target="_blank"><img class="img" src="" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                                    <div class="col-xl-8 col-lg-7">
-                                        <div class="slayt"><a href="" target="_blank"><img class="img" src="" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                                    <div class="col-xl-8 col-lg-7">
-                                        <div class="slayt"><a href="" target="_blank"><img class="img" src="" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div id="kontrol">
-                                    <a href="javascript:oncekiSlayt()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                                      </svg></a>
-                                    <a href="javascript:sonrakiSlayt()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                      </svg></a>
-                                </div>
-                    </div>  
+                     
                 </div>
             </section>
         </div>
@@ -128,6 +140,37 @@
             document.getElementById("main").style.marginLeft= "0";
             }
 
+        </script>
+		
+		<script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
         </script>
 
     </body>
